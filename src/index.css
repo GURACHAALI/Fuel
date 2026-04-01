@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 215 60% 22%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 25% 94%;
+    --secondary-foreground: 215 60% 22%;
+
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 215 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 215 60% 22%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 10% 50%;
+    --sidebar-primary: 215 60% 22%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 80% 96%;
+    --sidebar-accent-foreground: 215 60% 22%;
+    --sidebar-border: 220 15% 92%;
+    --sidebar-ring: 215 80% 55%;
+
+    --chart-petrol: 215 80% 55%;
+    --chart-diesel: 20 70% 50%;
+    --chart-success: 145 60% 42%;
+    --chart-warning: 38 92% 50%;
+
+    --metric-up: 145 60% 42%;
+    --metric-down: 0 72% 51%;
+
+    --intelligence-bg: 215 25% 96%;
+    --intelligence-border: 215 25% 88%;
+    --intelligence-icon: 215 60% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+}
