@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="fuelTrends favicon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1b33" />
+      <stop offset="100%" stop-color="#1f4ed8" />
+    </linearGradient>
+    <linearGradient id="pump" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#93c5fd" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="12" fill="url(#bg)" />
+
+  <rect x="14" y="13" width="24" height="40" rx="4" fill="url(#pump)" />
+  <rect x="18" y="18" width="16" height="10" rx="2" fill="#0f172a" opacity="0.9" />
+  <rect x="18" y="31" width="16" height="18" rx="2" fill="#1e3a8a" opacity="0.9" />
+
+  <path d="M39 18h7c2 0 4 2 4 4v15c0 2-2 4-4 4h-2" fill="none" stroke="#bfdbfe" stroke-width="3" stroke-linecap="round" />
+  <path d="M44 40v8" stroke="#bfdbfe" stroke-width="3" stroke-linecap="round" />
+
+  <text x="26" y="45" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="#dbeafe">24</text>
+</svg>

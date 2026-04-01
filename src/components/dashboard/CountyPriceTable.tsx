@@ -35,12 +35,12 @@ export default function CountyPriceTable() {
   };
 
   return (
-    <div className="bg-card rounded-xl border border-border shadow-sm animate-slide-in" style={{ animationDelay: '0.3s' }}>
-      <div className="p-5 border-b border-border">
+    <div className="bg-gradient-to-br from-card to-muted/30 rounded-xl border border-border shadow-md hover:shadow-lg transition-all animate-slide-in" style={{ animationDelay: '0.3s' }}>
+      <div className="p-6 border-b border-border/50">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-base font-bold text-foreground">All 47 Counties — Fuel Prices</h3>
-            <p className="text-xs text-muted-foreground mt-0.5">Prices in KES per litre • Updated in real-time</p>
+            <h3 className="text-lg font-poppins font-bold text-foreground">All 47 Counties — Fuel Prices</h3>
+            <p className="text-xs text-muted-foreground mt-1">Prices in KES per litre • Updated in real-time</p>
           </div>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -48,7 +48,7 @@ export default function CountyPriceTable() {
               placeholder="Filter counties..."
               value={filter}
               onChange={e => setFilter(e.target.value)}
-              className="h-9 pl-9 pr-4 rounded-lg bg-muted border-0 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 w-48"
+              className="h-9 pl-9 pr-4 rounded-lg bg-muted border border-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 w-48 transition-all hover:border-border/50"
             />
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function CountyPriceTable() {
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-border">
+            <tr className="border-b border-border/50 bg-muted/30">
               {[
                 { key: 'county', label: 'County' },
                 { key: 'superPetrol', label: 'Super Petrol' },
@@ -69,30 +69,33 @@ export default function CountyPriceTable() {
                 <th
                   key={col.key}
                   onClick={() => toggleSort(col.key as keyof CountyFuelPrice)}
-                  className="px-5 py-3 text-left text-[10px] font-semibold tracking-wider text-muted-foreground uppercase cursor-pointer hover:text-foreground transition-colors"
+                  className="px-6 py-4 text-left text-[11px] font-semibold tracking-wider text-muted-foreground uppercase cursor-pointer hover:text-primary transition-colors"
                 >
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-2">
                     {col.label}
-                    <ArrowUpDown className="w-3 h-3" />
+                    <ArrowUpDown className="w-3.5 h-3.5 opacity-50 hover:opacity-100" />
                   </div>
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {filtered.map((row) => (
-              <tr key={row.county} className="border-b border-border last:border-0 hover:bg-muted/50 transition-colors">
-                <td className="px-5 py-3 text-sm font-medium text-foreground">{row.county}</td>
-                <td className="px-5 py-3 text-sm text-foreground font-semibold">{row.superPetrol.toFixed(2)}</td>
-                <td className="px-5 py-3 text-sm text-foreground">{row.diesel.toFixed(2)}</td>
-                <td className="px-5 py-3 text-sm text-foreground">{row.kerosene.toFixed(2)}</td>
-                <td className="px-5 py-3 text-sm text-muted-foreground">{row.stations}</td>
-                <td className="px-5 py-3">
+            {filtered.map((row, idx) => (
+              <tr 
+                key={row.county} 
+                className="border-b border-border/30 last:border-0 hover:bg-primary/5 transition-colors group"
+              >
+                <td className="px-6 py-3.5 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{row.county}</td>
+                <td className="px-6 py-3.5 text-sm font-bold text-foreground">{row.superPetrol.toFixed(2)}</td>
+                <td className="px-6 py-3.5 text-sm font-semibold text-foreground">{row.diesel.toFixed(2)}</td>
+                <td className="px-6 py-3.5 text-sm text-foreground">{row.kerosene.toFixed(2)}</td>
+                <td className="px-6 py-3.5 text-sm text-muted-foreground">{row.stations}</td>
+                <td className="px-6 py-3.5">
                   <div className="flex items-center gap-2">
-                    <div className="w-16 h-1.5 bg-muted rounded-full overflow-hidden">
-                      <div className="h-full rounded-full bg-accent" style={{ width: `${row.demandIndex}%` }} />
+                    <div className="w-20 h-1.5 bg-muted/60 rounded-full overflow-hidden">
+                      <div className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60 transition-all" style={{ width: `${row.demandIndex}%` }} />
                     </div>
-                    <span className="text-xs text-muted-foreground">{row.demandIndex}%</span>
+                    <span className="text-xs font-semibold text-muted-foreground w-8">{row.demandIndex}%</span>
                   </div>
                 </td>
               </tr>

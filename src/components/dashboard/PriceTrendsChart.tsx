@@ -32,21 +32,21 @@ export default function PriceTrendsChart() {
   }, []);
 
   return (
-    <div className="bg-card rounded-xl p-6 border border-border shadow-sm animate-slide-in" style={{ animationDelay: '0.15s' }}>
+    <div className="bg-gradient-to-br from-card to-muted/30 rounded-xl p-6 border border-border shadow-md hover:shadow-lg transition-all animate-slide-in" style={{ animationDelay: '0.15s' }}>
       <div className="flex items-start justify-between mb-6">
         <div>
-          <h2 className="text-lg font-bold text-foreground">National Price Trends (KES)</h2>
-          <p className="text-sm text-muted-foreground mt-0.5">Live fuel price movements across Kenya</p>
+          <h2 className="text-lg font-poppins font-bold text-foreground">National Price Trends (KES)</h2>
+          <p className="text-sm text-muted-foreground mt-1">Live fuel price movements across Kenya</p>
         </div>
-        <div className="flex bg-muted rounded-lg p-0.5">
+        <div className="flex bg-muted/60 rounded-lg p-1">
           {(['24h', '7d', '30d'] as Period[]).map((p) => (
             <button
               key={p}
               onClick={() => setPeriod(p)}
               className={`px-4 py-1.5 rounded-md text-xs font-semibold transition-all ${
                 period === p
-                  ? 'bg-card text-foreground shadow-sm'
-                  : 'text-muted-foreground hover:text-foreground'
+                  ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary shadow-sm border border-primary/30'
+                  : 'text-muted-foreground hover:text-primary hover:bg-muted/40'
               }`}
             >
               {p}
