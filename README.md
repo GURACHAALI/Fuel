@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Fuel Market Data
 
-TODO: Document your project here
+A real-time fuel market data and analytics dashboard.
